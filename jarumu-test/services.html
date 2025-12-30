@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Jarumi Ventures Africa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --maroon: #800020;
+    --gold: #D4AF37;
+    --white: #ffffff;
+    --gray: #f4f4f4;
+    --text: #333333;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--white);
+}
+
+/* ================= HEADER ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 6%;
+    border-bottom: 1px solid #ddd;
+    background: var(--white);
+}
+
+header img { height: 130px; cursor: pointer; }
+
+nav a {
+    margin-left: 26px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+}
+
+nav a.cta {
+    background: var(--maroon);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 4px;
+}
+
+/* ================= SERVICES VISUAL ================= */
+.services-visual {
+    position: relative;
+    margin: 50px 6% 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.15);
+}
+
+.services-visual img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center 65%;
+    transition: transform 0.6s ease;
+}
+
+/* subtle clarity overlay */
+.services-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.15)
+    );
+}
+
+/* overlay content always visible */
+.visual-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    z-index: 2;
+    opacity: 1;
+    transition: none;
+}
+
+.visual-overlay h2 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.visual-overlay p {
+    max-width: 600px;
+    font-size: 1.05rem;
+    opacity: 0.95;
+}
+
+.services-visual:hover img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+    .services-visual img {
+        height: 260px;
+        object-position: center center;
+    }
+
+    .visual-overlay h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ================= SERVICES ================= */
+.services-container {
+    padding: 80px 10% 70px;
+    text-align: center;
+}
+
+.services-container h2 {
+    color: var(--maroon);
+    font-size: 2.4rem;
+}
+
+.services-container > p {
+    max-width: 700px;
+    margin: 12px auto 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 45px;
+}
+
+.service-card {
+    border: 2px solid var(--maroon);
+    padding: 38px;
+    border-radius: 10px;
+    background: var(--white);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    background: var(--maroon);
+    color: var(--white);
+    transform: translateY(-8px);
+}
+
+.service-card i {
+    font-size: 2.8rem;
+    margin-bottom: 18px;
+    color: var(--maroon);
+}
+
+.service-card:hover i { color: var(--white); }
+
+/* ================= PROCESS ================= */
+.process-section {
+    padding: 70px 10%;
+    background: var(--gray);
+    text-align: center;
+}
+
+.process-section h2 {
+    color: var(--maroon);
+    font-size: 2.3rem;
+}
+
+.process-section p {
+    max-width: 700px;
+    margin: 10px auto 40px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.process-step {
+    background: var(--white);
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.process-step span {
+    display: inline-block;
+    background: var(--maroon);
+    color: white;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* ================= FLOATING HUB ================= */
+.opportunity-hub {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: #25D366;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+    z-index: 999;
+}
+
+@media (max-width: 600px) {
+    .opportunity-hub span { display: none; }
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #f8f8f8;
+    color: #555;
+    text-align: center;
+    padding: 18px 6%;
+    font-size: 0.85rem;
+    border-top: 1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Logo">
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="impact.html">Impact</a>
+        <a href="get started.html" class="active cta">Get Started</a>
+    </nav>
+</header>
+
+<!-- IMAGE WITH HOVER CONTENT -->
+<section class="services-visual">
+    <img src="images/services.jpg" alt="Strategic direction compass">
+
+    <div class="visual-overlay">
+        <div>
+            <h2>Our Strategic Solutions</h2>
+            <p>
+                We provide clear direction, professional discipline, and
+                execution-focused support that helps organizations move
+                confidently toward sustainability.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-container">
+    <h2>What We Do</h2>
+    <p>
+        We help nonprofits transition from donor dependency to sustainability
+        through embedded, practical support.
+    </p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-chess-king"></i>
+            <h3>Strategic Advisory</h3>
+            <p>Mission-aligned strategy, financial modeling, and partnership readiness.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-cogs"></i>
+            <h3>Systems Strengthening</h3>
+            <p>Operational, financial, and governance systems that enable efficiency.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-users"></i>
+            <h3>Embedded Coaching</h3>
+            <p>Hands-on mentorship ensuring adoption, leadership, and continuity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+    <h2>Our Service Delivery Process</h2>
+    <p>A structured, collaborative approach that delivers measurable impact.</p>
+
+    <div class="process-grid">
+        <div class="process-step">
+            <span>1</span>
+            <h4>Assessment</h4>
+            <p>Understanding systems, gaps, and readiness.</p>
+        </div>
+        <div class="process-step">
+            <span>2</span>
+            <h4>Co-Design</h4>
+            <p>Building solutions with leadership teams.</p>
+        </div>
+        <div class="process-step">
+            <span>3</span>
+            <h4>Implementation</h4>
+            <p>Embedding systems into daily operations.</p>
+        </div>
+        <div class="process-step">
+            <span>4</span>
+            <h4>Coaching</h4>
+            <p>Continuous learning and refinement.</p>
+        </div>
+    </div>
+</section>
+
+<a href="https://www.whatsapp.com/channel/0029VbAlsIp6BIEj1lqL8B1N"
+   class="opportunity-hub" target="_blank">
+   <i class="fab fa-whatsapp"></i>
+   <span>Opportunities</span>
+</a>
+
+<footer>
+    © 2025 Jarumi Ventures Africa | Nairobi, Kenya<br>
+    📧 yvonnejarumi@gmail.com | clarajarumi@gmail.com
+</footer>
+
+</body>
+</html>

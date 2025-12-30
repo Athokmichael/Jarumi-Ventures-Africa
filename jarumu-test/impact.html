@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact & Publications | Jarumi Ventures Africa</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --maroon: #800020;
+  --gold: #D4AF37;
+  --white: #ffffff;
+  --gray: #f4f4f4;
+  --text: #333333;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--white);
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6%;
+  border-bottom: 1px solid #ddd;
+  background: var(--white);
+}
+
+header img { height: 130px; }
+
+nav a {
+  margin-left: 26px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+nav a.cta {
+  background: var(--maroon);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 4px;
+}
+
+/* ================= HERO ================= */
+.impact-hero {
+  height: 42vh;
+  background:
+    linear-gradient(135deg, rgba(128,0,32,0.08), rgba(128,0,32,0.02));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 820px;
+  background: rgba(255,255,255,0.96);
+  padding: 36px 50px;
+  border-radius: 10px;
+  margin-bottom: -30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  text-align: center;
+  animation: fadeUp 0.9s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: var(--maroon);
+}
+
+.hero-accent {
+  width: 70px;
+  height: 4px;
+  background: var(--gold);
+  margin: 14px auto 18px;
+}
+
+/* ================= METRICS ================= */
+.metrics-bar {
+  background: var(--maroon);
+  color: white;
+  padding: 70px 10% 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.metric-item {
+  transition: transform 0.3s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-6px);
+}
+
+.metric-item h2 {
+  font-size: 2.6rem;
+  color: var(--gold);
+  margin: 0;
+}
+
+.metric-item p {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ================= IMPACT NARRATIVE ================= */
+.impact-narrative {
+  padding: 75px 12%;
+  background: rgba(128,0,32,0.04);
+  text-align: center;
+}
+
+.impact-narrative h2 {
+  color: var(--maroon);
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.impact-narrative p {
+  max-width: 780px;
+  margin: auto;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* ================= PUBLICATIONS ================= */
+.pub-section {
+  padding: 90px 10%;
+}
+
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.pub-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 32px;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  border-color: var(--maroon);
+}
+
+.pub-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.pub-card i {
+  font-size: 2rem;
+  color: var(--maroon);
+  margin-bottom: 14px;
+}
+
+.pub-card h3 {
+  color: var(--maroon);
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.pub-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.pub-link {
+  color: var(--maroon);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ================= PARTNERS ================= */
+.partners {
+  padding: 65px 10%;
+  text-align: center;
+  background: var(--gray);
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.partner-logos p {
+  background: white;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* ================= WHATSAPP HUB ================= */
+.opportunity-hub {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  background: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #f8f8f8;
+  color: #555;
+  text-align: center;
+  padding: 18px 6%;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="C:/Users/Admin/Desktop/jarumu-test/Jarumi-Ventures-Logo.png" alt="Jarumi Logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="impact.html">Impact</a>
+     <a href="get started.html" class="active cta">Get Started</a>
+  </nav>
+</header>
+
+<section class="impact-hero">
+  <div class="hero-content">
+    <h1>Impact & Publications</h1>
+    <div class="hero-accent"></div>
+    <p>Driven by research. Evidenced by impact. Built for institutional resilience.</p>
+  </div>
+</section>
+
+<section class="metrics-bar">
+  <div class="metric-item"><h2>110+</h2><p>Webinar Participants</p></div>
+  <div class="metric-item"><h2>300+</h2><p>Youth Surveyed</p></div>
+  <div class="metric-item"><h2>5+</h2><p>Countries Reached</p></div>
+  <div class="metric-item"><h2>100%</h2><p>Mission Focused</p></div>
+</section>
+
+<section class="impact-narrative">
+  <h2>From Insight to Institutional Change</h2>
+  <p>
+    Our work bridges research, dialogue, and execution. We translate data into
+    strategy, conversation into policy influence, and evidence into systems
+    that strengthen organizations across Africa.
+  </p>
+</section>
+
+<section class="pub-section">
+  <div class="pub-grid">
+
+    <div class="pub-card">
+      <span class="pub-tag">Guide</span>
+      <i class="fas fa-handshake"></i>
+      <h3>Bridging the Gap</h3>
+      <p>Cross-generational dialogue and mentorship guide shaping Kenya’s social sector.</p>
+      <a href="#" class="pub-link">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="pub-card">
+      <span class="pub-tag">Research</span>
+      <i class="fas fa-chart-line"></i>
+      <h3>Nairobi YRC Survey</h3>
+      <p>Findings on youth resource center access across Nairobi sub-counties.</p>
+      <a href="#" class="pub-link">View Research <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="pub-card">
+      <span class="pub-tag">Policy</span>
+      <i class="fas fa-venus"></i>
+      <h3>MHM Policy Awareness</h3>
+      <p>Assessment of awareness of the 2019–2030 MHM policy in Nairobi County.</p>
+      <a href="#" class="pub-link">Download Report <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="partners">
+  <h2 style="color:var(--maroon)">Our Partners & Donors</h2>
+  <div class="partner-logos">
+    <p>UNICEF AUO</p>
+    <p>Canada</p>
+    <p>CREAW</p>
+    <p>IRI</p>
+    <p>CRAWN Trust</p>
+  </div>
+</section>
+
+<a href="https://www.whatsapp.com/channel/0029VbAlsIp6BIEj1lqL8B1N"
+   class="opportunity-hub" target="_blank">
+   <i class="fab fa-whatsapp"></i>
+   <span>Join the Hub</span>
+</a>
+
+<footer>
+  © 2025 Jarumi Ventures Africa<br>
+  📧 yvonnejarumi@gmail.com | clarajarumi@gmail.com
+</footer>
+
+</body>
+</html>
